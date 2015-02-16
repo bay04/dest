@@ -1,0 +1,30 @@
+<div class="large-10 medium-10 small-10 columns">
+    <p id="notice"><%= notice %></p>
+    <p><strong>Title:</strong><%= @proposition.title %></p>
+    
+    <p><strong>Descrition:</strong><%= @proposition.descrition %></p>
+    <p>
+        <strong>Resolved:</strong>
+        <% if @proposition.resolved%>
+            <%= "Yes"%>
+        <% else %>
+            <%= "Nope"%>
+        <% end %>
+    </p>
+    <div class="likes"><%= pluralize(@proposition.likers(User).count, 'supporters')%></div>
+    <% if signed_in? %>
+        <% if current_user.likes?(@proposition) %>
+            <%= link_to 'unlike', unlike_proposition_path(@proposition) %>
+        <% else %>
+            <%= link_to 'like', like_proposition_path(@proposition) %>
+        <% end %>
+    <% end %>
+    
+    <% if signed_in? %>
+        <% if current_user.role == "A" %>
+            <%= link_to 'Edit', edit_proposition_path(@proposition) %>
+            <%= link_to 'New', new_proposition_path %>
+        <% end %>
+    <% end %>|
+    <%= link_to 'Back', propositions_path %>
+</div>

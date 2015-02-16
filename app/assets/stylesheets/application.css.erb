@@ -1,0 +1,183 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ 
+ *= require foundation_and_overrides
+ *= require_tree .
+ *= require_self
+
+
+ */
+ 
+ 
+/*------------------- TEXT STYLING -------------------*/
+/*------------------------------------------------------------------*/
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    color: #666666;
+}
+p{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    color: #666666;
+}
+.centered{
+    text-align: center;
+}
+
+
+
+
+/*-------------------------- MENU STYLING --------------------------*/
+/*------------------------------------------------------------------*/
+
+.main-title{
+    font-weight: 200;
+    padding-bottom: 50px;
+}
+.top-bar{
+   max-width: 95%;
+   margin: 0 auto;
+   margin-top: 20px;
+   margin-bottom: 50px;
+}
+
+.proposition-title{
+    font-size: 20px;
+    font-weight: 300; 
+    padding-right: 40px;
+}
+.proposition-text{
+    font-weight: 400;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom:0;
+    max-width: 550px;
+}
+.ghost-icon{
+    position: relative;
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px 0px;
+}
+
+
+
+
+/*------------------------- BUTTON STYLING -------------------------*/
+/*------------------------------------------------------------------*/
+.button-container{
+    width:145px;
+    text-align:center;
+}
+.like-count{
+    font-weight: 300;
+    font-size: 29px;
+    padding: 0;
+    margin-bottom: 0;
+    text-align:center;
+    color: grey;
+}
+.like-text{
+    font-weight: 300;
+    padding: 0;
+    margin-top: -12px;
+    font-size: 12px;
+    color: #666666;
+    text-align:center;
+}
+.like-text-white{
+    font-weight: 300;
+    padding: 0;
+    margin-top: -12px;
+    font-size: 12px;
+    color: white;
+    text-align:center;
+}
+.prop-button-unlike{
+    margin-top: -10px;
+    padding: 10px 43px 10px 43px;
+    font-size: 12px;
+}
+.prop-button-like{
+    margin-top: -10px;
+    padding: 10px 53px 10px 52px;
+    font-size: 12px;
+}
+
+.button.success{
+    background-color:#139F2B;
+}
+.generic-button{
+    padding: 10px 0;
+    width: 185px;
+    font-size: 12px;
+}
+.auth-button{
+    border-bottom: 2px solid grey;
+    font-size: 11px;
+}
+.form-label{
+    font-size: 14px;
+    font-weight: 300;
+}
+.form-label + input{
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Ubuntu', sans-serif;
+    color: #666666;
+}
+
+
+
+/*------------------- PROPOSITIONS INDEX STYLING -------------------*/
+/*------------------------------------------------------------------*/
+.prop-login-link{
+    font-weight: 300;
+    padding: 0;
+    font-size: 12px;
+}
+.prop-tr{
+    height: 200px;
+}
+
+
+
+/*------------------------ HOMEPAGE STYLING ------------------------*/
+/*------------------------------------------------------------------*/
+.spacer-top{
+    padding-top: 40px;
+}
+.spacer-bottom{
+    padding-bottom: 40px;
+}
+
+
+
+
+
+/*------------------- COMPONENTS & MISC STYLING -------------------*/
+/*------------------------------------------------------------------*/
+table{
+    border: 0px;
+}
+.centered-space{
+    margin: 0 auto;
+    
+}
+.ghost-image{
+    width: 200px;
+    background-image:url('<%= asset_path("Ghost.png") %> ');
+}
+.form-hr{
+    margin-top: 0px;
+}

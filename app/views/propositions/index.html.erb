@@ -1,0 +1,41 @@
+<div class="large-12 medium-12 small-12 columns">
+<h2 class="main-title">Propositions & Suggestions</h2>
+<table>
+<tbody>
+  <% @propositions.each do |proposition| %>
+    <tr class="prop-tr">
+      <td><h3 class="proposition-title"><%= proposition.title %></h3></td>
+      <td><p class="proposition-text"><%= proposition.descrition %></p></td>
+      <td>
+        <div class="button-container">
+          <p class="like-count"><%= proposition.likers(User).count %></p>
+          <p class="like-text">Guardians support this</p>
+          <% if signed_in? %>
+            <% if current_user.likes?(proposition) %>
+                <%= link_to 'un-support', unlike_proposition_path(proposition), class: 'button alert prop-button-unlike' %>
+            <% else %>
+                <%= link_to 'support', like_proposition_path(proposition), class: 'button success prop-button-like' %>
+            <% end %>
+        <% else %>
+            <%= link_to 'Login to support this!', sign_in_path, class: 'prop-login-link' %>
+        <% end %>
+        
+        <!-- @one_prop = proposition %>-->
+        <!--render partial: 'button_like' %>-->
+      
+        </div>
+          <% if signed_in? %>
+              <% if current_user.role == "A" %>
+                  <%= link_to 'Edit', edit_proposition_path(proposition) %>
+                  <%= link_to 'Delete', proposition, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+      <% end %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+<br>
+</div>
+
+

@@ -1,0 +1,31 @@
+<nav class="top-bar" data-topbar="" role="navigation" data-no-turbolink role="navigation" data-options="is_hover: false">
+<ul class="title-area">
+    <li class="name">
+        <h1><a href="http://www.destinyghostreport.com">Destiny Ghost Report | <span class="like-text-white">Beta Build</span></a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+</ul>
+<section class="top-bar-section">
+    <ul class="right">
+        <li class="divider"></li>
+        <li><%= link_to 'Propositions',propositions_path %></li>
+        <li class="divider"></li>
+            <li class="has-dropdown"><a href="#">Suggestions</a>
+            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+                <li class="parent-link hide-for-large-up"></li>
+                <li><label>Suggestions</label></li>
+                <li><%= link_to 'Suggest proposition', new_suggestion_path %></li>
+                <li><%= link_to "My suggestions", suggestions_path %></li>
+                <li class="divider"></li>
+            </ul>
+            <li>
+                <% if signed_in? %>
+                    <%= link_to "Sign out", sign_out_path, method: :delete %>
+                <% else %>
+                    <%= link_to "Sign in", sign_in_path %>
+                <% end %>
+            </li>
+        </li>
+    </ul>
+</section>
+</nav>

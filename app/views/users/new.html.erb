@@ -1,0 +1,19 @@
+<div class="row">
+	<div id="clearance" class="sign-up large-6 medium-6 small-8 large-offset-3 medium-offset-3 small-offset-2 large-centered medium-centered small-centered  columns">
+		<fieldset>
+			<legend>  <h2 class="centered"><%= t '.title' %></h2></legend>
+				<%= form_for @user do |form| %>
+					<%= render partial: '/users/form', object: form %>
+					<div class="submit-field">
+						<ul class="button-group even-2">
+							<li><%= form.submit nil, class: 'button tiny radius generic-button'%></li>
+							<li><%= link_to t('.sign_in'), sign_in_path, class: 'button success tiny radius generic-button' %></li>
+						</ul>
+					</div>
+				<% end %>
+		</fieldset>
+	</div>
+</div>
+
+
+

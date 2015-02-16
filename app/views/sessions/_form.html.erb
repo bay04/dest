@@ -1,0 +1,20 @@
+<%= form_for :session, url: session_path do |form| %>
+    <div class="text-field">
+        <%= form.label :email, class: 'form-label' %>
+        <%= form.text_field :email, type: 'email', class: 'radius' %>
+    </div>
+    <div class="password-field">
+        <%= form.label :password, class: 'form-label' %>
+        <%= form.password_field :password, class: 'radius' %>
+    </div>
+    <div class="submit-field">
+        <ul class="button-group even-2">
+            <li><%= form.submit nil , class: "button tiny  success generic-button"%></li>
+            <% if Clearance.configuration.allow_sign_up? %>
+                <li><%= link_to t('.sign_up'), sign_up_path, class: 'button tiny'%></li>
+            <% end %>
+        </ul>
+        <hr class="form-hr">
+        <%= link_to t('.forgot_password'), new_password_path, class: 'button tiny right auth-button' %>
+    </div>
+<% end %>

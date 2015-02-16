@@ -1,0 +1,20 @@
+<div class="ghost-icon">
+	<a class="ghost-icon"></a>
+</div>
+<div class="small-10 medium-10 large-12 columns">
+	<h3>Welcome to Destiny's Ghost Report</h3>
+	<div class="ghost-image">
+		<p>Hey</p>
+	</div>
+	<p>Hello Guardian, make sure to go to the propositions page and support a bug fix or a feature suggestion as this data will be available for Bungie to see! The higher the numbers the better chances we have of getting them addressed. </p>
+	<p class="spacer-bottom">Keep it real guardian!</p>
+</div>
+	<hr>
+<div class="small-10 medium-10 large-12 columns spacer-top">
+	<h3>Latest Suggestions and propositions</h3>
+	<% @propositions.each do |proposition| %>
+		<b><%= link_to proposition.title, propositions_path %></b>
+		<p><%= proposition.descrition %></p>
+	<% end %>
+</div>
+

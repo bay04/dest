@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= content_for?(:title) ? yield(:title) : "Destiny Ghost Report" %></title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+</head>
+
+<body>
+    <div class="container">
+        <%= render 'layouts/nav' %>
+            <div class="large-4 medium-4 small-4 large-offset-4 medium-offset-4 small-offset-4 columns">
+                <% if flash[:error]  %>
+                    <br>
+                    <div data-alert class="alert-box">
+                        <%= flash[:error] %>
+                        <a href="#" class="close">&times;</a>
+                    </div>
+                <% end %>
+            </div>
+        <div class="row">
+            <%= yield %>
+        </div>
+    </div>
+    <%= javascript_include_tag "application" %>
+</body>
+</html>
